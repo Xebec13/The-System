@@ -8,32 +8,23 @@
 }
 
 :root {
-  --background: #1f2c75;
-  --background-color: #1d1340;
-  --main-color: #445ef2;
-  --second-color: #221426;
+  --background: #1d1340;
+  --background-color: #2059a6;
+  --main-color: #19d3f3;
+  --second-color: #1c344f;
   --blue-border: rgb(102, 143, 204);
   --color: #e1e3e3;
   /* SHADOWS--------------------------------------- */
-  --text-shadow:1px 1px 0px gold,
-  -3px -0 25px #1d1340,
-  3px 0px 3px white,
-  0px 0px 15px white,
-  /* 15px 10px 10px black, */
-  /* 0 0 40px #1d1340,
+  --text-shadow: 1px 1px 0px #2059a6, -3px -0 25px #1d1340, 3px 0px 3px #e1e3e3,
+    0px 0px 15px white,
+    /* 15px 10px 10px black, */ /* 0 0 40px #1d1340,
   0 0 40px #1d1340, */
-  /* 0 0 60px #1d1340,
+      /* 0 0 60px #1d1340,
   0 0 80px #1d1340,
   0 0 80px #1d1340,
   0 0 100px #1d1340, */
-  0 0 150px #1d1340;
---box-shadow: 0 0 50px 15px #e1e3e3;
-
-
-
-
-
-
+      0 0 150px #1d1340;
+  --box-shadow: 0 0 10px 0 #e1e3e3;
 }
 
 body {
@@ -41,28 +32,28 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--background-color);
+  background:var(--second-color);
   color: var(--color);
 }
 
 .wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  background: repeating-conic-gradient(
-    from var(--a),
-    #445ef2 0%,
-    #445ef2 5%,
-    transparent 5%,
-    transparent 40%,
-    #445ef2 50%
-  );
-  animation: animate 4s linear infinite;
-  border: 2px solid #333;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  background: repeating-conic-gradient(
+    from var(--a),
+    var(--main-color) 0%,
+    var(--main-color) 5%,
+    var(--background) 25%,
+    var(--background) 50%,
+    transparent 10%
+  );
+  animation: animate 10s linear infinite;
+  border: 4px solid var(--background);
+  border-radius: 20px;
   overflow: hidden;
   padding: 10px;
   z-index: -1;
@@ -84,73 +75,76 @@ body {
 .wrapper::before {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: repeating-conic-gradient(
-    from var(--a),
-    #e00db3 0%,
-    #e00db3 5%,
-    transparent 5%,
-    transparent 40%,
-    #e00db3 50%
-  );
-  animation: animate 4s linear infinite;
-  animation-delay: -1s;
-  z-index: -3;
-}
-
-.wrapper::after {
-  content: "";
-  position: absolute;
   inset: 4px;
   background: var(--background);
   border-radius: 15px;
-  border: 8px solid #25252b;
-  z-index: -2;
+  border: 2px solid var(--background);
+  filter: blur(12px);
+  z-index: -1;
 }
-
-/* ----------------------IMG SECETION-----------------------------  */
-
-.tribal-border {
-  display: flex;
-  align-items: flex-start;
-  gap: 23rem;
+.logo-container .logo h1{
+  font-size: 2rem;
+  color: var(--color);
 }
-
-.tribal-border .top-img {
-  padding: 15px;
-  margin-top: -10px;
-}
-
-.tribal-border .top-img img {
-  width: 15vw;
-}
-
-.tribal-border .top-img.border-right {
-  transform: rotate(-55deg);
-  
-}
-.tribal-border .top-img.border-left {
-  transform: rotate(55deg);
-  
-}
-/* TOOLTIP SECTION -------------------------------------------------*/
+/* ---------------------TOOLTIP SECTION -----------------------------*/
 .tool-tips-container {
- display: flex;
- justify-content: flex-end;
- width: 100%;
- padding: 20px;
- text-align: right;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 100%;
+  text-align: right;
+  padding: 20px;
+  text-shadow: var(--text-shadow);
 }
 
-.tool-tips-container #datetime.glow{
-  font-size: 2.5rem;
+.tool-tips-container .daily-list:nth-child(1) {
+  position: relative;
+  right: 320px;
+  top: 50px;
+}
+
+.tool-tips-container .daily-list ul{
+  text-align: left;
+  list-style: none;
+}
+.tool-tips-container #date,
+.tool-tips-container #datetime {
   font-weight: 900;
   letter-spacing: 1px;
   width: 13rem;
-  color: var(--color);
-  text-shadow: var(--text-shadow);
 }
+.tool-tips-container #datetime {
+  font-size: 1.7rem;
+}
+.tool-tips-container #date {
+  font-size: 1rem;
+}
+
+/*--------------------------------MAIN SECTION ------------------------------*/
+.main-bar {
+  text-shadow: var(--text-shadow);
+  width: 300px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.main-bar .main-card ul.nav-list li {
+  border: 2px solid pink;
+  padding: 10px 20px;
+  margin: 15px;
+}
+
+
+.main-bar .main-card ul.nav-list li,
+.main-bar .main-card ul.nav-list li a{
+  text-decoration: none;
+  list-style: none;
+  color: var(--color);
+
+}
+
+
 
 
 
