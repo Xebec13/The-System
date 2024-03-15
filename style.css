@@ -13,7 +13,27 @@
   --main-color: #445ef2;
   --second-color: #221426;
   --blue-border: rgb(102, 143, 204);
-  --color: #fff;
+  --color: #e1e3e3;
+  /* SHADOWS--------------------------------------- */
+  --text-shadow:1px 1px 0px gold,
+  -3px -0 25px #1d1340,
+  3px 0px 3px white,
+  0px 0px 15px white,
+  /* 15px 10px 10px black, */
+  /* 0 0 40px #1d1340,
+  0 0 40px #1d1340, */
+  /* 0 0 60px #1d1340,
+  0 0 80px #1d1340,
+  0 0 80px #1d1340,
+  0 0 100px #1d1340, */
+  0 0 150px #1d1340;
+--box-shadow: 0 0 50px 15px #e1e3e3;
+
+
+
+
+
+
 }
 
 body {
@@ -28,7 +48,7 @@ body {
 .wrapper {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   background: repeating-conic-gradient(
     from var(--a),
     #445ef2 0%,
@@ -46,8 +66,6 @@ body {
   overflow: hidden;
   padding: 10px;
   z-index: -1;
-
-
 }
 @property --a {
   syntax: "<angle>";
@@ -55,45 +73,128 @@ body {
   initial-value: 0deg;
 }
 @keyframes animate {
-    0% {
-        --a: 0deg;
-    }
-    100%{
-        --a: 360deg;
-    }
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
 }
 
 .wrapper::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: repeating-conic-gradient(
-        from var(--a),
-        #e00db3 0%,
-        #e00db3 5%,
-        transparent 5%,
-        transparent 40%,
-        #e00db3 50%
-      );
-      animation: animate 4s linear infinite;
-      animation-delay: -1s;
-      z-index: -3;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #e00db3 0%,
+    #e00db3 5%,
+    transparent 5%,
+    transparent 40%,
+    #e00db3 50%
+  );
+  animation: animate 4s linear infinite;
+  animation-delay: -1s;
+  z-index: -3;
 }
-
 
 .wrapper::after {
-    content: "";
-    position: absolute;
-    inset: 4px;
-    background: var(--background);
-    border-radius: 15px;
-    border: 8px solid #25252b;
-    z-index: -2;
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: var(--background);
+  border-radius: 15px;
+  border: 8px solid #25252b;
+  z-index: -2;
 }
 
+/* ----------------------IMG SECETION-----------------------------  */
+
+.tribal-border {
+  display: flex;
+  align-items: flex-start;
+  gap: 23rem;
+}
+
+.tribal-border .top-img {
+  padding: 15px;
+  margin-top: -10px;
+}
+
+.tribal-border .top-img img {
+  width: 15vw;
+}
+
+.tribal-border .top-img.border-right {
+  transform: rotate(-55deg);
+  
+}
+.tribal-border .top-img.border-left {
+  transform: rotate(55deg);
+  
+}
+/* TOOLTIP SECTION -------------------------------------------------*/
+.tool-tips-container {
+ display: flex;
+ justify-content: flex-end;
+ width: 100%;
+ padding: 20px;
+ text-align: right;
+}
+
+.tool-tips-container #datetime.glow{
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  width: 13rem;
+  color: var(--color);
+  text-shadow: var(--text-shadow);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .header {
-    z-index: 1;
+  z-index: 1;
 }
 .header h1,
 .header p {
