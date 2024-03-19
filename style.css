@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
@@ -16,15 +16,10 @@
   --color: #e1e3e3;
   /* SHADOWS--------------------------------------- */
   --text-shadow: 1px 1px 0px #2059a6, -3px -0 25px #1d1340, 3px 0px 3px #e1e3e3,
-    0px 0px 15px white,
-    /* 15px 10px 10px black, */ /* 0 0 40px #1d1340,
-  0 0 40px #1d1340, */
-      /* 0 0 60px #1d1340,
-  0 0 80px #1d1340,
-  0 0 80px #1d1340,
-  0 0 100px #1d1340, */
-      0 0 150px #1d1340;
+    0px 0px 15px white, 0 0 150px #1d1340;
   --box-shadow: 0 0 10px 0 #e1e3e3;
+  /* CALENDAR COLORS----------------------------------- */
+  --primary-clr:#b38add;
 }
 
 body {
@@ -130,17 +125,17 @@ body {
   text-shadow: var(--text-shadow);
   width: 330px;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .main-bar .main-card ul.nav-list li {
   display: flex;
   justify-content: space-between;
   border: 2px solid var(--second-color);
-  padding: 10px 20px;
-  margin: 15px;
   box-shadow: var(--box-shadow);
   transition: all 2ms ease-in-out;
+  margin: 15px 30px;
+  padding: 10px 10px;
 }
 
 .main-bar .main-card ul.nav-list li i {
@@ -179,7 +174,7 @@ body {
 }
 
 .skill-container .skill i {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .skill-container .skill span {
   font-size: 1.5rem;
@@ -228,7 +223,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 .coding-container ul#list li i {
@@ -274,7 +268,7 @@ body {
 }
 
 .coding-container ul#list li.done {
-  background:var(--second-color);
+  background: var(--second-color);
 }
 
 .coding-container ul#list li.done::after {
@@ -294,10 +288,9 @@ body {
   height: 20dvh;
   overflow-y: auto;
   padding-right: 10px;
-  
 }
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -305,4 +298,53 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--color);
+}
+
+/* ---------------------------CALENDAR SECTION-------------------------------------- */
+.calendar-container {
+  position: relative;
+  width: 100%;
+  min-height: 50dvh;
+  margin: 0 auto;
+  padding: 5px;
+  color: #fff;
+  display: flex;
+  border-radius: 10px;
+}
+.calendar-left {
+  width: 100%;
+  padding: 5px;
+}
+
+.calendar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: var(--color);
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.calendar .month {
+  width: 100%;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.calendar .month i{ 
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+.calendar .month i:hover{
+  text-shadow: var(--text-shadow);
+  transform: scale(1.3);
 }

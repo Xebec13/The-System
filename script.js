@@ -58,3 +58,5 @@ function updateLocalStorage() {
     const tasks = Array.from(list.children).map(li => li.textContent.replace('×', '').trim());
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
+
+// ------------------------------------CALENDAR SECTION--------------
