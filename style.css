@@ -81,6 +81,19 @@ body {
   border: 2px solid var(--color);
   z-index: -1;
 }
+/* ---------------------------LOGO SECTION---------------------------- */
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+}
+.logo-container .logo-returner i {
+  font-size: 1.5rem;
+  color: var(--color);
+  cursor: pointer;
+  text-shadow: var(--text-shadow);
+}
 .logo-container .logo h1 {
   font-size: 2rem;
   color: var(--color);
