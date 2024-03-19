@@ -32,7 +32,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background:url(photos/bcg.png);
+  background: #2f363e;
   color: var(--color);
 }
 
@@ -42,7 +42,7 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   background: repeating-conic-gradient(
     from var(--a),
     var(--color) 0%,
@@ -51,7 +51,7 @@ body {
     transparent 50%,
     transparent 10%
   );
-  animation: animate 20s linear infinite;
+  animation: animate 5s linear infinite;
   border: 4px solid var(--second-color);
   border-radius: 25px;
   overflow: hidden;
@@ -77,48 +77,38 @@ body {
   position: absolute;
   inset: 4px;
   background: url(photos/bcg1.png);
-  filter: blur(4px);
-  opacity: 1;
   border-radius: 15px;
   border: 2px solid var(--color);
   z-index: -1;
 }
-.logo-container .logo h1{
+.logo-container .logo h1 {
   font-size: 2rem;
   color: var(--color);
+  text-shadow: var(--text-shadow);
 }
 /* ---------------------TOOLTIP SECTION -----------------------------*/
 .tool-tips-container {
-  position: relative;
   display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
   text-align: right;
   padding: 20px;
   text-shadow: var(--text-shadow);
+  width: 100%;
 }
 
-.tool-tips-container .daily-list:nth-child(1) {
-  position: relative;
-  right: 320px;
-  top: 50px;
-}
-
-.tool-tips-container .daily-list ul{
+.tool-tips-container .daily-list ul {
   text-align: left;
   list-style: none;
 }
-.tool-tips-container #date,
-.tool-tips-container #datetime {
+.tool-tips-container .date-widget #date,
+.tool-tips-container .date-widget #datetime {
   font-weight: 900;
-  letter-spacing: 1px;
-  width: 13rem;
 }
-.tool-tips-container #datetime {
+.tool-tips-container .date-widget #datetime {
   font-size: 1.7rem;
 }
-.tool-tips-container #date {
+.tool-tips-container .date-widget #date {
   font-size: 1rem;
 }
 
@@ -130,88 +120,44 @@ body {
   font-size: 2rem;
 }
 
-.main-bar .main-card ul.nav-list li{
+.main-bar .main-card ul.nav-list li {
   display: flex;
   justify-content: space-between;
-  border: 2px solid pink;
+  border: 2px solid var(--second-color);
   padding: 10px 20px;
   margin: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 2ms ease-in-out;
 }
-
 
 .main-bar .main-card ul.nav-list li i {
   font-size: 2.5rem;
 }
 
-
 .main-bar .main-card ul.nav-list li,
-.main-bar .main-card ul.nav-list li a{
+.main-bar .main-card ul.nav-list li a {
   text-decoration: none;
   list-style: none;
   color: var(--color);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.header {
-  z-index: 1;
+/* Hover Animations Main Section-------------------------------------- */
+.main-bar .main-card ul.nav-list li a:hover {
+  color: var(--main-color);
 }
-.header h1,
-.header p {
-  margin-left: -140px;
+.main-bar .main-card ul.nav-list li:hover {
+  transform: scale(1.1);
+  color: var(--main-color);
 }
 
-.top-img img {
-  width: 150px;
-}
+/* Coding TREE HTML --------------------------------------------------- */
 
 .skill-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
   padding: 10px;
-  z-index: 1;
+  text-shadow: var(--text-shadow);
 }
 
 .skill-container .skill {
@@ -220,8 +166,130 @@ body {
 }
 
 .skill-container .skill i {
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 .skill-container .skill span {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.total-points {
+  padding: 10px;
+  width: 100%;
+  text-align: right;
+}
+.total-points h2 {
+  font-size: 1.5rem;
+  text-shadow: var(--text-shadow);
+}
+
+.coding-container {
+  height: 30dvh;
+  width: 100%;
+  padding: 5px;
+}
+#inputBx {
+  position: relative;
+  width: 100%;
+  outline: none;
+  font-size: 1.5rem;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  box-shadow: var(--box-shadow);
+  /* margin: 10px; */
+  padding: 5px;
+}
+
+.coding-container ul#list li {
+  position: relative;
+  width: calc(100% - 30px);
+  text-shadow: var(--text-shadow);
+  background-color: transparent;
+  margin: 5px;
+  padding: 5px 5px 5px 45px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  text-align: left;
+  list-style: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.coding-container ul#list li i {
+  position: absolute;
+  right: -25px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+}
+
+.coding-container ul#list li i::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background: crimson;
+  transform: rotate(-45deg);
+}
+.coding-container ul#list li i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background: crimson;
+  transform: rotate(45deg);
+}
+
+.coding-container ul#list li::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+}
+
+.coding-container ul#list li.done {
+  background:var(--second-color);
+}
+
+.coding-container ul#list li.done::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  width: 12px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(315deg);
+}
+
+#list {
+  position: relative;
+  margin-top: 20px;
+  height: 20dvh;
+  overflow-y: auto;
+  padding-right: 10px;
+  
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color);
 }
