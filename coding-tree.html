@@ -13,15 +13,27 @@
     <div class="wrapper">
         <div class="logo-container">
             <div class="logo-returner"><a href="index.html"><i class='bx bx-arrow-back'></i></a></div>
-            <div class="logo"><h1>Status</h1></div>
+            <div class="logo">
+                <h1>Status</h1>
+            </div>
+        </div>
+        <div class="level-container">
+            <div class="level"><span id="levelPoints"></span>
+                <p>LEVEL</p>
+            </div>
+            <div class="job">
+                <p>Job: None</p>
+                <p>Specialization: None</p>
+            </div>
+        </div>
+
+        <div class="coding-container">
+            <ul id="list"></ul>
+            <input type="text" id="inputBx" placeholder="Write Here...">
         </div>
         <div class="total-points">
-            <h2> Total 28/85</h2>
-        </div>
-        <div class="coding-container">
-            
-            <input type="text" id="inputBx" placeholder="Write Here...">
-            <ul id="list"></ul>
+            <i class='bx bxs-color'></i>
+            <h2>Total <span id="totalPoints">0</span>/<span id="categoryPoints">0</span></h2>
         </div>
         <div class="skill-container">
             <div class="skill"><i class='bx bxl-html5'></i>
@@ -52,8 +64,10 @@
                 <span>5/10</span>
             </div>
         </div>
+
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

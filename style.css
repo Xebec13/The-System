@@ -28,6 +28,7 @@ body {
   align-items: center;
   justify-content: center;
   background:url(photos/bcg.png);
+  background-color: var(--second-color);
   color: var(--color);
 }
 
@@ -37,7 +38,8 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 320px;
+  min-height: 50dvh;
   background: repeating-conic-gradient(
     from var(--a),
     var(--color) 0%,
@@ -150,7 +152,7 @@ body {
   color: var(--color);
 }
 
-/* Hover Animations Main Section-------------------------------------- */
+/* ------------------------------------Hover Animations Main Section-------------------------------------- */
 .main-bar .main-card ul.nav-list li:hover{
   color: var(--main-color);
   background-image: url(photos/bcg.png);
@@ -159,15 +161,39 @@ body {
 }
 
 
-/* Coding TREE HTML --------------------------------------------------- */
+/* -------------------------------------Coding TREE HTML --------------------------------------------------- */
 
 .skill-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 2rem;
+  grid-column-gap: 5rem;
+  grid-row-gap: 3px;
   padding: 10px;
   text-shadow: var(--text-shadow);
 }
+.level-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  text-shadow: var(--text-shadow);
+}
+.level-container .level {
+  font-size: 55px;
+  font-weight: bolder;
+}
+.level-container .level p {
+  font-size: .7rem;
+  text-align: right;
+}
+.level-container .job {
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  flex-direction: column;
+  font-size: .8rem;
+}
+
 
 .skill-container .skill {
   display: flex;
@@ -175,32 +201,46 @@ body {
 }
 
 .skill-container .skill i {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .skill-container .skill span {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .total-points {
   padding: 10px;
   width: 100%;
-  text-align: right;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-around;
 }
 .total-points h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-shadow: var(--text-shadow);
+  padding: 2px;
 }
 
+
+.total-points i {
+  display: inline;
+  text-shadow: var(--text-shadow);
+  font-size: 1.5rem;
+  padding: 2px;
+}
+
+
 .coding-container {
-  height: 30dvh;
   width: 100%;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 #inputBx {
   position: relative;
   width: 100%;
   outline: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   background-color: transparent;
   text-align: center;
   color: white;
@@ -211,11 +251,11 @@ body {
 
 .coding-container ul#list li {
   position: relative;
-  width: calc(100% - 30px);
+  width: calc(100% - 20px);
   text-shadow: var(--text-shadow);
   background-color: transparent;
   margin: 5px;
-  padding: 5px 5px 5px 45px;
+  padding: 5px 0 5px 25px;
   cursor: pointer;
   box-shadow: var(--box-shadow);
   text-align: left;
@@ -228,9 +268,9 @@ body {
 
 .coding-container ul#list li i {
   position: absolute;
-  right: -25px;
-  width: 20px;
-  height: 20px;
+  right: -15px;
+  width: 10px;
+  height: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -242,16 +282,16 @@ body {
 .coding-container ul#list li i::before {
   content: "";
   position: absolute;
-  width: 10px;
-  height: 2px;
+  width: 6px;
+  height: 1px;
   background: crimson;
   transform: rotate(-45deg);
 }
 .coding-container ul#list li i::after {
   content: "";
   position: absolute;
-  width: 10px;
-  height: 2px;
+  width: 6px;
+  height: 1px;
   background: crimson;
   transform: rotate(45deg);
 }
@@ -260,8 +300,8 @@ body {
   content: "";
   position: absolute;
   left: 8px;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background-color: transparent;
   border: 1px solid white;
   border-radius: 50%;
