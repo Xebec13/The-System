@@ -6,11 +6,11 @@ setInterval(() => {
 }, 1000);
 
 
-let date = document.getElementById("date");
+let dateTime = document.getElementById("date");
 
 setInterval(() => {
     let dt = new Date();
-    date.innerHTML = dt.toLocaleDateString();
+    dateTime.innerHTML = dt.toLocaleDateString();
 }, 1000);
 
 // ------------------------CODING TREE JS BELOW--------------------
@@ -95,4 +95,4 @@ const level = sum1 / 2;
 document.getElementById('levelPoints').textContent = level;
 
 
-// ------------------------------------CALENDAR SECTION--------------
+// ------------------------------------CALENDAR SECTION--------------------------------/
