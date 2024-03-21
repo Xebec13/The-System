@@ -43,9 +43,9 @@ body {
   min-height: 70dvh;
   background: repeating-conic-gradient(
     from var(--a),
-    var(--color) 0%,
-    var(--color) 5%,
-    var(--color) 25%,
+    var(--background-color) 0%,
+    var(--main-color) 5%,
+    var(--magenda) 25%,
     transparent 50%,
     transparent 10%
   );
@@ -166,9 +166,11 @@ body {
 .skill-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-column-gap: 5rem;
   grid-row-gap: 3px;
   padding: 10px;
+  margin: 10px;
   text-shadow: var(--text-shadow);
 }
 .level-container {
@@ -197,6 +199,7 @@ body {
 .skill-container .skill {
   display: flex;
   gap: 0.6rem;
+  align-items: center;
 }
 
 .skill-container .skill i {
@@ -207,11 +210,14 @@ body {
 }
 
 .total-points {
-  padding: 10px;
-  width: 100%;
+  margin: 10px;
+  width: 90%;
+  height: 45px;
+  /* border: 1px solid var(--color); */
   box-shadow: var(--box-shadow);
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .total-points h2 {
   font-size: 1.2rem;
@@ -229,9 +235,12 @@ body {
 .coding-container {
   width: 100%;
   padding: 5px;
+  margin: 15px 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  /* border: 1px solid pink; */
+  box-shadow: var(--box-shadow);
 }
 #inputBx {
   position: relative;
@@ -241,7 +250,7 @@ body {
   background-color: transparent;
   text-align: center;
   color: white;
-  box-shadow: var(--box-shadow);
+  /* box-shadow: var(--box-shadow); */
   /* margin: 10px; */
   padding: 5px;
 }
@@ -254,13 +263,14 @@ body {
   margin: 5px;
   padding: 5px 0 5px 25px;
   cursor: pointer;
-  box-shadow: var(--box-shadow);
+  /* box-shadow: var(--box-shadow); */
   text-align: left;
   list-style: none;
-  font-size: 1rem;
+  font-size: .7rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  word-break: break-word;
 }
 
 .coding-container ul#list li i {
@@ -312,11 +322,12 @@ body {
 .coding-container ul#list li.done::after {
   content: "";
   position: absolute;
+  /* background-color: var(--magenda); */
   left: 12px;
-  width: 12px;
-  height: 4px;
+  width: 1px;
+  height: 6px;
   border-left: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #fff; 
   transform: rotate(315deg);
 }
 
