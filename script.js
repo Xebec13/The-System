@@ -12,6 +12,47 @@ setInterval(() => {
     let dt = new Date();
     dateTime.innerHTML = dt.toLocaleDateString();
 }, 1000);
+const skills = document.querySelectorAll('.skill span');
+
+// Inicjalizuj sumę
+let sum1 = 0;
+
+// Przejdź przez każdy element i zsumuj punkty
+skills.forEach(skill => {
+    const points = parseInt(skill.textContent.split('/')[0]);
+    sum1 += points;
+});
+
+// Wyświetl sumę w elemencie totalPoints
+document.getElementById('totalPoints').textContent = sum1;
+
+
+const category = document.querySelectorAll('.skill span');
+
+// Inicjalizuj sumę
+let sum2 = 0;
+
+// Przejdź przez każdy element i zsumuj punkty
+skills.forEach(skill => {
+    const points = parseInt(skill.textContent.split('/')[1]);
+    sum2 += points;
+});
+
+// Wyświetl sumę w elemencie totalPoints
+document.getElementById('categoryPoints').textContent = sum2;
+
+const level = sum1 / 2;
+document.getElementById('levelPoints').textContent = level;
+
+
+
+
+
+
+
+
+
+
 
 // ------------------------CODING TREE JS BELOW--------------------
 let inputBx = document.querySelector("#inputBx");
@@ -62,37 +103,8 @@ function updateLocalStorage() {
 }
 
 
-const skills = document.querySelectorAll('.skill span');
-
-// Inicjalizuj sumę
-let sum1 = 0;
-
-// Przejdź przez każdy element i zsumuj punkty
-skills.forEach(skill => {
-    const points = parseInt(skill.textContent.split('/')[0]);
-    sum1 += points;
-});
-
-// Wyświetl sumę w elemencie totalPoints
-document.getElementById('totalPoints').textContent = sum1;
+// ------------------------------------FORMULARZ 1 HEALTH
+let inputBx2 = document.querySelector("#inputBx2");
+let list2 = document.querySelector("#list2");
 
 
-const category = document.querySelectorAll('.skill span');
-
-// Inicjalizuj sumę
-let sum2 = 0;
-
-// Przejdź przez każdy element i zsumuj punkty
-skills.forEach(skill => {
-    const points = parseInt(skill.textContent.split('/')[1]);
-    sum2 += points;
-});
-
-// Wyświetl sumę w elemencie totalPoints
-document.getElementById('categoryPoints').textContent = sum2;
-
-const level = sum1 / 2;
-document.getElementById('levelPoints').textContent = level;
-
-
-// ------------------------------------CALENDAR SECTION--------------------------------/
