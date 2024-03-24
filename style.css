@@ -31,6 +31,7 @@ body {
   background: url(photos/bcg.png);
   background-color: var(--second-color);
   color: var(--color);
+  /* z-index: -1; */
 }
 
 .wrapper {
@@ -54,7 +55,7 @@ body {
   border-radius: 25px;
   overflow: hidden;
   padding: 10px;
-  z-index: 1;
+  z-index: 0;
 }
 @property --a {
   syntax: "<angle>";
@@ -70,7 +71,7 @@ body {
   }
 }
 
-.wrapper::after {
+.wrapper::before {
   content: "";
   position: absolute;
   inset: 4px;
@@ -331,7 +332,7 @@ body {
   transform: rotate(315deg);
 }
 
-#list,#list1 {
+#list {
   position: relative;
   margin-top: 20px;
   height: 20dvh;
@@ -349,4 +350,77 @@ body {
   background-color: var(--color);
 }
 
-/* ---------------------------CALENDAR SECTION-------------------------------------- */
+/* ---------------------------Personal SECTION-------------------------------------- */
+.personal-container {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: url(photos/Blue-blackneon.jpg);
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+.personal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+  box-shadow: var(--box-shadow);
+}
+
+.personal-row input[type="text"]{
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
+.personal-row button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: var(--background-color);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+ul#list-container li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  position: relative;
+}
+
+ul#list-container li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(photos/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+ul#list-container li.checked {
+  color: var(--magenda);
+  text-decoration: line-through;
+}
+
+ul#list-container li.checked::before{
+  background-image: url(photos/checked.png);
+}

@@ -1,23 +1,34 @@
 //------------------------------- Level SECTION------------------------------
-let time = document.getElementById("datetime");
+let dateWidget = document.querySelector(".date-widget");
+let time = dateWidget.querySelector("#datetime");
+let dateTime = dateWidget.querySelector("#date");
 
-setInterval(() => {
-    let d = new Date();
-    time.innerHTML = d.toLocaleTimeString();
-}, 1000);
+document.addEventListener("DOMContentLoaded", function() {
+    let dateWidget = document.querySelector(".date-widget");
+    if (dateWidget) {
+        let time = dateWidget.querySelector("#datetime");
+        let dateTime = dateWidget.querySelector("#date");
 
+        if (time && dateTime) {
+            setInterval(() => {
+                let d = new Date();
+                time.innerHTML = d.toLocaleTimeString();
+            }, 1000);
 
-let dateTime = document.getElementById("date");
+            setInterval(() => {
+                let dt = new Date();
+                dateTime.innerHTML = dt.toLocaleDateString();
+            }, 1000);
+        } else {
+            console.error("Nie znaleziono elementów #datetime lub #date w .date-widget");
+        }
+    } else {
+        console.error("Nie znaleziono elementu .date-widget");
+    }
+});
 
-setInterval(() => {
-    let dt = new Date();
-    dateTime.innerHTML = dt.toLocaleDateString();
-}, 1000);
-const skills = document.querySelectorAll('.skill span');
 
 let sum1 = 0;
-
-
 skills.forEach(skill => {
     const points = parseInt(skill.textContent.split('/')[0]);
     sum1 += points;
@@ -46,9 +57,6 @@ document.getElementById('levelPoints').textContent = level;
 
 
 
-
-
-
 // ------------------------CODING TREE JS BELOW--------------------
 let inputBx = document.querySelector("#inputBx");
 let list = document.querySelector("#list");
@@ -58,10 +66,15 @@ document.addEventListener("DOMContentLoaded", function () {
     loadTasks();
 });
 
-inputBx.addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-        addItem(this.value);
-        this.value = "";
+document.addEventListener("DOMContentLoaded", function() {
+    let inputBx = document.querySelector("#inputBx");
+    if (inputBx) {
+        inputBx.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                addItem(this.value);
+                this.value = "";
+            }
+        });
     }
 });
 
@@ -98,7 +111,18 @@ function updateLocalStorage() {
 }
 
 //--------------------------------------Health From-----------------------
-
+const inputBox = document.getElementById("input-box")
+const listContainer = document.getElementById("list-container")
+function addTask() {
+    if(inputBox.value === ''){
+        alert("WRITE SOMETHING!")
+    }
+    else{
+        let li = document.createElement("li");
+        li.innerHTML = inputBox.value;
+        listContainer.appendChild(li);
+    }
+}
 
 
 
